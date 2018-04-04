@@ -1,0 +1,17 @@
+server:
+  maxThreads: 1024
+  applicationContextPath: /
+  applicationConnectors:
+    - type: http
+      port: 8080
+
+logging:
+  level: INFO
+  appenders:
+    - type: console
+      threshold: ALL
+      timeZone: Asia/Calcutta
+      target: stdout
+      logFormat: "%d [%thread] %-5level %c{15} - [%X{X-Transaction-Key} - %X{X-Request-Key}] - %msg%n%rEx"
+
+mysql: "mysql://localhost:3306/facebook/"
